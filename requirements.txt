@@ -1,5 +1,5 @@
 flask
 flask-restful
 pandas
-werkzeug
+Werkzeug==2.2.2
 
