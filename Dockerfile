@@ -12,4 +12,4 @@ EXPOSE 6767
 
 ENV FLASK_APP=api.py
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=6767"]
+CMD ["python", "api.py"]
