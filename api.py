@@ -1,3 +1,4 @@
+from urllib.parse import quote as url_quote
 from flask import Flask, request
 from flask_restful import Api, Resource
 import pandas as pd
