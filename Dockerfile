@@ -1,20 +1,18 @@
-# Base image
-FROM python:3.9-slim
+# Kullanılacak temel imajı belirle
+FROM python:3.8-slim-buster
 
-# Set working directory
+# Çalışma dizinini belirle
 WORKDIR /app
 
-# Copy requirements file
-COPY requirements.txt .
+# Bulunduğumuz dizindeki dosyaları container içine kopyala
+COPY . /app
 
-# Install dependencies
+# requirements.txt dosyasındaki gerekli paketleri yükle
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
-COPY . .
+# Dünya adında bir ortam değişkeni tanımla
+ENV NAME World
 
-# Expose port
 EXPOSE 5000
-
-# Command to run the application
-CMD ["python", "api.py"]
+# Container başlatıldığında app.py dosyasını çalıştır
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
