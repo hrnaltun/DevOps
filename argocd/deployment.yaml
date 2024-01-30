@@ -16,4 +16,4 @@ spec:
       - name: devops-container
         image: hrnaltun/devops:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
