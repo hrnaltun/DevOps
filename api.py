@@ -35,7 +35,7 @@ api.add_resource(Name, '/apartname')
 api.add_resource(Apart, '/aparts')
 
 if __name__ == '__main__':
-    app.run(host="35.222.224.149", port=80)
+    app.run(host="0.0.0.0", port=80)
 
 
 
