@@ -1,7 +1,7 @@
 metadata:
   name: devops-app
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: devops 
