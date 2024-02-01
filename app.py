@@ -7,7 +7,7 @@ api = Api(app)
 
 class Apart(Resource):
     def get(self):
-        data = pd.read_csv('apart.csv', encoding='latin1')  
+        data = pd.read_csv('apart.csv', encoding='utf-8')  
         data = data.to_dict('records')
         return {'data': data}, 200
 
@@ -20,14 +20,14 @@ class Apart(Resource):
                                  'kat': [kat],
                                  'odasayısı': [odasayısı],
                                  'm2': [m2]})
-        data = pd.read_csv('apart.csv', encoding='latin1')  
+        data = pd.read_csv('apart.csv', encoding='utf-8')  
         data = data.append(req_data, ignore_index=True)
-        data.to_csv('apart.csv', index=False, encoding='latin1')  
+        data.to_csv('apart.csv', index=False, encoding='utf-8')  
         return {'message': 'Record successfully added.'}, 200
 
 class Name(Resource):
     def get(self):
-        data = pd.read_csv('apart.csv', usecols=[0], encoding='latin1')  
+        data = pd.read_csv('apart.csv', usecols=[0], encoding='utf-8')  
         data = data.to_dict('records')
         return {'data': data}, 200
 
@@ -36,3 +36,4 @@ api.add_resource(Apart, '/aparts')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
+
