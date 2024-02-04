@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: devops-container
-        image: hrnaltun/devops:v1.4
+        image: hrnaltun/devops:v${BUILD_NUMBER}
         ports:
         - containerPort: 5000
